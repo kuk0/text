@@ -751,7 +751,7 @@ nthCodepoint (Exts.I# n0#) (Text arr (Exts.I# off0#) (Exts.I# len0#))
         | Exts.isTrue# (word2Int# (isContByte# (indexWord8Array# ba off#)))
             = cleanEnd (off# +# 1#)
         -- If this is not a contiunuation byte, the previous byte is the last one
-        | otherwise                       = Exts.I# off#
+        | otherwise                       = Exts.I# (off# -# off0#)
 
 
 #endif
